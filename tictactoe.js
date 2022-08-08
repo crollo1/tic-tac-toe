@@ -25,89 +25,109 @@ console.log('I can do this!');
 
 // PSUEDOCODE
 
+// how do we get X and O to show on the board
+// $('cell').html('insert X or O here');
+
+// work out how to incorporate X and O for alternate clicks
 // use event listeners for click functions i.e. detecting click on each square. // each box will need an event listener.
-const placeToken = function(){
+
+// debugger
+let playerX = 0;
+// create function for event listeners
+const placeToken = function ( cell, player ){
+    if (playerX === true) {
+         $('.cell').html('X') 
+         playerX === false
+     } else {
+      $('.cell').html('O') 
+     }
 
 };
 
-let playerXTurn = true;
-
-$('#0').on('click', function(){
-    console.log('you clicked 0');
-    $('#0').html('O')
-});
-
-$('#1').on('click', function(){
-console.log('you clicked 1');
-$('#1').html('X') 
-});
-
-$('#2').on('click', function(){
-    console.log('you clicked 2');
-    $('#2').html('O')
-});
-
-$('#3').on('click', function(){
-    console.log('you clicked 3');
-    $('#3').html('X')
-});
-
-$('#4').on('click', function(){
-    console.log('you clicked 4');
-    $('#4').html('O')
-});
-
-$('#5').on('click', function(){
-    console.log('you clicked 5');
-    $('#5').html('X')
-});
-
-$('#6').on('click', function(){
-    console.log('you clicked 6');
-    $('#6').html('O')
-});
-
-$('#7').on('click', function(){
-    console.log('you clicked 7');
-    $('#7').html('X')
-});
-
-$('#8').on('click', function(){
-    console.log('you clicked 8');
-    $('#8').html('O')
-});
-
-
-$('.playerx').on('click', function(){
-    console.log('you clicked player x');
-});
-
-$('.playero').on('click', function(){
-    console.log('you clicked player o');
-});
+$('#0').on('click', placeToken('#0', player));
+$('#1').on('click', placeToken('#1', player));
+$('#2').on('click', placeToken('#2', player));
+$('#3').on('click', placeToken('#3', player));
+$('#4').on('click', placeToken('#4', player));
+$('#5').on('click', placeToken('#5', player));
+$('#6').on('click', placeToken('#6', player));
+$('#7').on('click', placeToken('#7', player));
+$('#8').on('click', placeToken('#8', player));
 
 $('.newgame').on('click', function(){
     console.log('you clicked new game');
     $('.cell').html('');
 });
 
+$('.playerx').on('click', function(){
+    console.log('you chose player x');
+    // $('body').text('You chose Player X')
+});
 
-// how do we get X and O to show on the board
-// create a function for gameBegin, starting player X
+$('.playero').on('click', function(){
+    console.log('you chose player o');
+    // $('body').text('You chose Player O')
+});
+
+// $('#0').on('click', function(){
+//     console.log('you clicked 0');
+//     $('#0').html('O')
+// });
+
+// $('#1').on('click', function(){
+// console.log('you clicked 1');
+// $('#1').html('X') 
+// });
+
+// $('#2').on('click', function(){
+//     console.log('you clicked 2');
+//     $('#2').html('O')
+// });
+
+// $('#3').on('click', function(){
+//     console.log('you clicked 3');
+//     $('#3').html('X')
+// });
+
+// $('#4').on('click', function(){
+//     console.log('you clicked 4');
+//     $('#4').html('O')
+// });
+
+// $('#5').on('click', function(){
+//     console.log('you clicked 5');
+//     $('#5').html('X')
+// });
+
+// $('#6').on('click', function(){
+//     console.log('you clicked 6');
+//     $('#6').html('O')
+// });
+
+// $('#7').on('click', function(){
+//     console.log('you clicked 7');
+//     $('#7').html('X')
+// });
+
+// $('#8').on('click', function(){
+//     console.log('you clicked 8');
+//     $('#8').html('O')
+// });
 
 
- // end gameBegin
 
-
-// work out how to incorporate X and O for alternate clicks
-
-// how do i then detect a winning combo --> arrays to store combos
+// how do i store a winning combo --> arrays to store combos
 const winningCombinations = [
-    ['1','2','3'],['4','5','6'],['7','8','9'],['1','4','7'],['2','5','8'],['3','6','9'],['1','5','9'],['3','5','7'],
+    ['0','1','2'],['3','4','5'],['6','7','8'],['0','3','6'],['1','4','7'],['2','5','8'],['0','4','8'],['2','4','6'],
 ]
 
-// write a loop to check through?
+$(winningCombinations).each([ , ], function( index, value ) {
+    console.log( );
+  });
+// run loop function through array to detect winning combos
+// can I in jQuery?
+
 
 // how do i know what is already in the squares, and if it's already occupied
 
-
+// Once happy with game functioning, add celebration animation once game complete, and reset/clear with 'New Game' button
