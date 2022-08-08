@@ -28,61 +28,64 @@ console.log('I can do this!');
 // use event listeners for click functions i.e. detecting click on each square. // each box will need an event listener.
 const placeToken = function(){
 
-
-    let playerXTurn = true;
-    $('#box1').on('click', function(){
-    console.log('you clicked box1');
-    $('#box1').html('X') 
-    });
-
-    $('#box2').on('click', function(){
-        console.log('you clicked box2');
-    });
-    
-    $('#box3').on('click', function(){
-        console.log('you clicked box3');
-    });
-
-    $('#box4').on('click', function(){
-        console.log('you clicked box4');
-    });
-
-    $('#box5').on('click', function(){
-        console.log('you clicked box5');
-    });
-
-    $('#box6').on('click', function(){
-        console.log('you clicked box6');
-    });
-
-    $('#box7').on('click', function(){
-        console.log('you clicked box7');
-    });
-
-    $('#box8').on('click', function(){
-        console.log('you clicked box8');
-    });
-
-    $('#box9').on('click', function(){
-        console.log('you clicked box9');
-    });
-
-    $('.playerx').on('click', function(){
-        console.log('you clicked player x');
-    });
-
-    $('.playero').on('click', function(){
-        console.log('you clicked player o');
-    });
-
-    $('.newgame').on('click', function(){
-        console.log('you clicked new game');
-    });
-
 };
+
+let playerXTurn = true;
+
+$('#0').on('click', function(){
+    console.log('you clicked box9');
+});
+
+$('#1').on('click', function(){
+console.log('you clicked box1');
+$('#1').html('X') 
+});
+
+$('#2').on('click', function(){
+    console.log('you clicked box2');
+});
+
+$('#3').on('click', function(){
+    console.log('you clicked box3');
+});
+
+$('#4').on('click', function(){
+    console.log('you clicked box4');
+});
+
+$('#5').on('click', function(){
+    console.log('you clicked box5');
+});
+
+$('#6').on('click', function(){
+    console.log('you clicked box6');
+});
+
+$('#7').on('click', function(){
+    console.log('you clicked box7');
+});
+
+$('#8').on('click', function(){
+    console.log('you clicked box8');
+});
+
+
+$('.playerx').on('click', function(){
+    console.log('you clicked player x');
+});
+
+$('.playero').on('click', function(){
+    console.log('you clicked player o');
+});
+
+$('.newgame').on('click', function(){
+    console.log('you clicked new game');
+});
+
+
 // how do we get X and O to show on the board
 // create a function for gameBegin, starting player X
-gameBegin();
+
 
  // end gameBegin
 
