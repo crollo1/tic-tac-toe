@@ -33,40 +33,48 @@ const placeToken = function(){
 let playerXTurn = true;
 
 $('#0').on('click', function(){
-    console.log('you clicked box9');
+    console.log('you clicked 0');
+    $('#0').html('O')
 });
 
 $('#1').on('click', function(){
-console.log('you clicked box1');
+console.log('you clicked 1');
 $('#1').html('X') 
 });
 
 $('#2').on('click', function(){
-    console.log('you clicked box2');
+    console.log('you clicked 2');
+    $('#2').html('O')
 });
 
 $('#3').on('click', function(){
-    console.log('you clicked box3');
+    console.log('you clicked 3');
+    $('#3').html('X')
 });
 
 $('#4').on('click', function(){
-    console.log('you clicked box4');
+    console.log('you clicked 4');
+    $('#4').html('O')
 });
 
 $('#5').on('click', function(){
-    console.log('you clicked box5');
+    console.log('you clicked 5');
+    $('#5').html('X')
 });
 
 $('#6').on('click', function(){
-    console.log('you clicked box6');
+    console.log('you clicked 6');
+    $('#6').html('O')
 });
 
 $('#7').on('click', function(){
-    console.log('you clicked box7');
+    console.log('you clicked 7');
+    $('#7').html('X')
 });
 
 $('#8').on('click', function(){
-    console.log('you clicked box8');
+    console.log('you clicked 8');
+    $('#8').html('O')
 });
 
 
@@ -80,6 +88,7 @@ $('.playero').on('click', function(){
 
 $('.newgame').on('click', function(){
     console.log('you clicked new game');
+    $('.cell').html('');
 });
 
 
