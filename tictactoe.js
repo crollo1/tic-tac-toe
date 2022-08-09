@@ -35,25 +35,38 @@ console.log('I can do this!');
 let playerX = true;
 // create function for event listeners
 const placeToken = function (  ){
-    if (playerX === true) {
-         $(this).html('X') 
-         playerX = false
-     } else {
-        $(this).html('O') 
-        playerX = true
-     };
+
+    // check if clicked square is free
+
+    // let contents = $(this).html()
+    // console.log(contents);
+    if ($(this).html() === '') {
+        console.log('free');  
+
+        // check is variable true
+        if (playerX === true) {
+            
+             $(this).html('X') 
+             // if so, make square x
+             playerX = false
+             // if false, run else
+        } else {
+            
+            $(this).html('O') 
+            // if so, place o
+            playerX = true
+            // change o back to x
+        } // closes else
+
+    } // closes free square check
+
+
+
 
 };
+// click functions for each box
+$('.cell').on('click', placeToken);
 
-$('#0').on('click', placeToken);
-$('#1').on('click', placeToken);
-$('#2').on('click', placeToken);
-$('#3').on('click', placeToken);
-$('#4').on('click', placeToken);
-$('#5').on('click', placeToken);
-$('#6').on('click', placeToken);
-$('#7').on('click', placeToken);
-$('#8').on('click', placeToken);
 
 $('.newgame').on('click', function(){
     console.log('you clicked new game');
@@ -118,19 +131,26 @@ $('.playero').on('click', function(){
 
 
 // how do i store a winning combo --> arrays to store combos
-const winningCombinations = [
-    ['0','1','2'],['3','4','5'],['6','7','8'],['0','3','6'],['1','4','7'],['2','5','8'],['0','4','8'],['2','4','6'],
-]
+// const winningCombinations = [
+//     ['0','1','2'],['3','4','5'],['6','7','8'],['0','3','6'],['1','4','7'],['2','5','8'],['0','4','8'],['2','4','6'],
+// ]
 
-// const checkWin = function(){
+
+
+const checkOccupiedCell = function(){
     
-//     for (let i = 0; i < .length; i++) {
-//         const element = array[i];
+
+    // for (let i = 0; i < checkOccupiedCell.length; i++) {
+    //     const element = array[i];
         
-//     }
-//     console.log('');
+    // }
+    // console.log('');
+};
+
+const checkWin = function(){
 
 
+};
 
 // };
 // $(winningCombinations).each([ , ], function( index, value ) {
