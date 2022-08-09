@@ -145,7 +145,8 @@ const checkForWin = function(){
         
     } else if (pos2 === 'O' && pos4 === 'O' && pos6 === 'O' ){
         console.log('player o wins');
-
+    } else {
+        console.log(`It's a draw! Click New Game`);
     }; 
 
     
