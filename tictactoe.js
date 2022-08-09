@@ -32,27 +32,28 @@ console.log('I can do this!');
 // use event listeners for click functions i.e. detecting click on each square. // each box will need an event listener.
 
 // debugger
-let playerX = 0;
+let playerX = true;
 // create function for event listeners
-const placeToken = function ( cell, player ){
+const placeToken = function (  ){
     if (playerX === true) {
-         $('.cell').html('X') 
-         playerX === false
+         $(this).html('X') 
+         playerX = false
      } else {
-      $('.cell').html('O') 
-     }
+        $(this).html('O') 
+        playerX = true
+     };
 
 };
 
-$('#0').on('click', placeToken('#0', player));
-$('#1').on('click', placeToken('#1', player));
-$('#2').on('click', placeToken('#2', player));
-$('#3').on('click', placeToken('#3', player));
-$('#4').on('click', placeToken('#4', player));
-$('#5').on('click', placeToken('#5', player));
-$('#6').on('click', placeToken('#6', player));
-$('#7').on('click', placeToken('#7', player));
-$('#8').on('click', placeToken('#8', player));
+$('#0').on('click', placeToken);
+$('#1').on('click', placeToken);
+$('#2').on('click', placeToken);
+$('#3').on('click', placeToken);
+$('#4').on('click', placeToken);
+$('#5').on('click', placeToken);
+$('#6').on('click', placeToken);
+$('#7').on('click', placeToken);
+$('#8').on('click', placeToken);
 
 $('.newgame').on('click', function(){
     console.log('you clicked new game');
@@ -121,9 +122,20 @@ const winningCombinations = [
     ['0','1','2'],['3','4','5'],['6','7','8'],['0','3','6'],['1','4','7'],['2','5','8'],['0','4','8'],['2','4','6'],
 ]
 
-$(winningCombinations).each([ , ], function( index, value ) {
-    console.log( );
-  });
+// const checkWin = function(){
+    
+//     for (let i = 0; i < .length; i++) {
+//         const element = array[i];
+        
+//     }
+//     console.log('');
+
+
+
+// };
+// $(winningCombinations).each([ , ], function( index, value ) {
+//     console.log( );
+//   });
 // run loop function through array to detect winning combos
 // can I in jQuery?
 
