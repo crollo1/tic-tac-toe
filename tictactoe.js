@@ -70,8 +70,6 @@ const placeToken = function (  ){
 $('.cell').on('click', placeToken);
 
 
-
-
 $('.newgame').on('click', function(){
     console.log('you clicked new game');
     $('.cell').html('');
@@ -79,65 +77,72 @@ $('.newgame').on('click', function(){
 
 $('.playerx').on('click', function(){
     console.log('you chose player x');
-    playerX = true;
-    // $('body').text('You chose Player X')
+    playerX = true; // if clicked, player X has been selected
 });
 
 $('.playero').on('click', function(){
     console.log('you chose player o');
-    playerX = false;
-    // $('body').text('You chose Player O')
+    playerX = false; // if clicked, player O has been selected
 });
-
 
 
 // write function to check winning combos
 const checkForWin = function(){
 
-    if ($('#0').html() === 'X' && $('#1').html() === 'X' && $('#2').html() === 'X' ){
+    const pos0 = $('#0').html();
+    const pos1 = $('#1').html();
+    const pos2 = $('#2').html();
+    const pos3 = $('#3').html();
+    const pos4 = $('#4').html();
+    const pos5 = $('#5').html();
+    const pos6 = $('#6').html();
+    const pos7 = $('#7').html();
+    const pos8 = $('#8').html();
+
+    if (pos0 === 'X' && pos1 === 'X' && pos2 === 'X' ){
        console.log('player x wins');
-    } else if ($('#0').html() === 'O' && $('#1').html() === 'O' && $('#2').html() === 'O' ){
+    } else if (pos0 === 'O' && pos1 === 'O' && pos2 === 'O' ){
         console.log('player o wins');
-    } else if ($('#3').html() === 'X' && $('#4').html() === 'X' && $('#5').html() === 'X' ){
+    } else if (pos3 === 'X' && pos4 === 'X' && pos5 === 'X' ){
        console.log('player x wins');
         
-    } else if ($('#3').html() === 'O' && $('#4').html() === 'O' && $('#5').html() === 'O' ){
-        console.log('player o wins');
-        
-    } else if ($('#6').html() === 'X' && $('#7').html() === 'X' && $('#8').html() === 'X' ){
-       console.log('player x wins');
-        
-    } else if ($('#6').html() === 'O' && $('#7').html() === 'O' && $('#8').html() === 'O' ){
-        console.log('player o wins');
-        
-    } else if ($('#0').html() === 'X' && $('#3').html() === 'X' && $('#6').html() === 'X' ){
-       console.log('player x wins');
-        
-    } else if ($('#0').html() === 'O' && $('#3').html() === 'O' && $('#6').html() === 'O' ){
+    } else if (pos3 === 'O' && pos4 === 'O' && pos5 === 'O' ){
         console.log('player o wins');
         
-    } else if ($('#1').html() === 'X' && $('#4').html() === 'X' && $('#7').html() === 'X' ){
+    } else if (pos6 === 'X' && pos7 === 'X' && pos8 === 'X' ){
        console.log('player x wins');
         
-    } else if ($('#1').html() === 'O' && $('#4').html() === 'O' && $('#7').html() === 'O' ){
+    } else if (pos6 === 'O' && pos7 === 'O' && pos8 === 'O' ){
         console.log('player o wins');
         
-    } else if ($('#2').html() === 'X' && $('#5').html() === 'X' && $('#8').html() === 'X' ){
+    } else if (pos0 === 'X' && pos3 === 'X' && pos6 === 'X' ){
        console.log('player x wins');
         
-    } else if ($('#2').html() === 'O' && $('#5').html() === 'O' && $('#8').html() === 'O' ){
+    } else if (pos0 === 'O' && pos3 === 'O' && pos6 === 'O' ){
         console.log('player o wins');
         
-    } else if ($('#0').html() === 'X' && $('#4').html() === 'X' && $('#8').html() === 'X' ){
+    } else if (pos1 === 'X' && pos4 === 'X' && pos7 === 'X' ){
        console.log('player x wins');
         
-    } else if ($('#0').html() === 'O' && $('#4').html() === 'O' && $('#8').html() === 'O' ){
+    } else if (pos1 === 'O' && pos4 === 'O' && pos7 === 'O' ){
         console.log('player o wins');
         
-    } else if ($('#2').html() === 'X' && $('#4').html() === 'X' && $('#6').html() === 'X' ){
+    } else if (pos2 === 'X' && pos5 === 'X' && pos8 === 'X' ){
        console.log('player x wins');
         
-    } else if ($('#2').html() === 'O' && $('#4').html() === 'O' && $('#6').html() === 'O' ){
+    } else if (pos2 === 'O' && pos5 === 'O' && pos8 === 'O' ){
+        console.log('player o wins');
+        
+    } else if (pos0 === 'X' && pos4 === 'X' && pos8 === 'X' ){
+       console.log('player x wins');
+        
+    } else if (pos0 === 'O' && pos4 === 'O' && pos8 === 'O' ){
+        console.log('player o wins');
+        
+    } else if (pos2 === 'X' && pos4 === 'X' && pos6 === 'X' ){
+       console.log('player x wins');
+        
+    } else if (pos2 === 'O' && pos4 === 'O' && pos6 === 'O' ){
         console.log('player o wins');
 
     }; 
