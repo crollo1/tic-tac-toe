@@ -36,14 +36,14 @@ let playerX = true;
 // create function for event listeners
 const placeToken = function (  ){
 
-    // check if clicked square is free
-
     // let contents = $(this).html()
     // console.log(contents);
+    // check if clicked square is free with no existing HTML
     if ($(this).html() === '') {
         console.log('free');  
-
-        // check is variable true
+        // if (this).html() === '') true, run following
+        
+        // check is variable true, true
         if (playerX === true) {
             
              $(this).html('X') 
@@ -68,6 +68,8 @@ const placeToken = function (  ){
 $('.cell').on('click', placeToken);
 
 
+
+
 $('.newgame').on('click', function(){
     console.log('you clicked new game');
     $('.cell').html('');
@@ -83,83 +85,43 @@ $('.playero').on('click', function(){
     // $('body').text('You chose Player O')
 });
 
-// $('#0').on('click', function(){
-//     console.log('you clicked 0');
-//     $('#0').html('O')
-// });
-
-// $('#1').on('click', function(){
-// console.log('you clicked 1');
-// $('#1').html('X') 
-// });
-
-// $('#2').on('click', function(){
-//     console.log('you clicked 2');
-//     $('#2').html('O')
-// });
-
-// $('#3').on('click', function(){
-//     console.log('you clicked 3');
-//     $('#3').html('X')
-// });
-
-// $('#4').on('click', function(){
-//     console.log('you clicked 4');
-//     $('#4').html('O')
-// });
-
-// $('#5').on('click', function(){
-//     console.log('you clicked 5');
-//     $('#5').html('X')
-// });
-
-// $('#6').on('click', function(){
-//     console.log('you clicked 6');
-//     $('#6').html('O')
-// });
-
-// $('#7').on('click', function(){
-//     console.log('you clicked 7');
-//     $('#7').html('X')
-// });
-
-// $('#8').on('click', function(){
-//     console.log('you clicked 8');
-//     $('#8').html('O')
-// });
-
-
 
 // how do i store a winning combo --> arrays to store combos
 // const winningCombinations = [
 //     ['0','1','2'],['3','4','5'],['6','7','8'],['0','3','6'],['1','4','7'],['2','5','8'],['0','4','8'],['2','4','6'],
 // ]
+// run loop function through array to detect winning combos
 
+// store winning combos without a simpler array
+const winningCombos = [
 
-
-const checkOccupiedCell = function(){
+    winCombo0 = ['0','1','2'],
+    winCombo1 = ['3','4','5'],
+    winCombo2 = ['6','7','8'],
+    winCombo3 = ['0','3','6'],
+    winCombo4 = ['1','4','7'],
+    winCombo5 = ['2','5','8'],
+    winCombo6 = ['0','4','8'],
+    winCombo7 = ['2','4','6'],
     
+];
 
-    // for (let i = 0; i < checkOccupiedCell.length; i++) {
-    //     const element = array[i];
-        
-    // }
-    // console.log('');
-};
-
+// write function to check winning combos
+// incorporate playerX or playerO wins, or It's a draw - press new game
 const checkWin = function(){
 
 
 };
 
+
+
+
+
+
 // };
 // $(winningCombinations).each([ , ], function( index, value ) {
 //     console.log( );
 //   });
-// run loop function through array to detect winning combos
-// can I in jQuery?
 
-
-// how do i know what is already in the squares, and if it's already occupied
 
 // Once happy with game functioning, add celebration animation once game complete, and reset/clear with 'New Game' button
