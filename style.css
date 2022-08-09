@@ -1,5 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&display=swap');
 
 body {
     margin: 30px;
@@ -11,7 +13,7 @@ body {
 h1 {
     text-align: center;
     font-size: 80px;
-    font-family: 'BhuTuka Expanded One';
+    font-family: 'BhuTuka Expanded One', sans-serif;
     font-weight: 800;
     margin-bottom: 40px;
     margin-top: 30px;
@@ -36,7 +38,7 @@ h1 {
    justify-content: center;
    align-items: center;
    display: flex;
-   font-family: 'BhuTuka Expanded One';
+   font-family: 'BhuTuka Expanded One', sans-serif;
    font-size: 80px;
    font-weight: bold;
    background: rgb(18, 176, 234);
@@ -56,13 +58,19 @@ button {
     margin: 40px 30px 20px 30px;
     padding: 20px;
     font-size: 20px;
-    font-family: 'BhuTuka Expanded One'; 
+    font-family: 'BhuTuka Expanded One', sans-serif; 
     border-radius: 5px; 
 }
 
 button:hover {
     background-color: black;
     color: white;
+}
+
+p {
+    font-size: 25px;
+    font-family: 'Kaisei Opti', sans-serif;
+    margin-top: 5px;
 }
 
 

@@ -37,42 +37,43 @@ let playerX = true;
 const placeToken = function (  ){
 
     // let contents = $(this).html()
-    // console.log(contents);
+    
     // check if clicked square is free with no existing HTML
     if ($(this).html() === '') {
         console.log('free');  
         // if (this).html() === '') true, run following
         
-        // check is variable true, true
+        // check is the variable true
         if (playerX === true) {
             
              $(this).html('X') 
-             checkForWin();
              // if so, make square x
+             checkForWin();
+             // run check for win function
              playerX = false
              // if false, run else
         } else {
             
             $(this).html('O') 
+            // if so, make square o
             checkForWin();
-            // if so, place o
+             // run check for win function
             playerX = true
             // change o back to x
+
         } // closes else
 
-    } // closes free square check
+    } // closes check for free square
 
 
+}; // closes placeToken
 
 
-};
-// click functions for each box
-$('.cell').on('click', placeToken);
-
+$('.cell').on('click', placeToken); // click functions for each box
 
 $('.newgame').on('click', function(){
     console.log('you clicked new game');
-    $('.cell').html('');
+    $('.cell').html(''); // click function to clear game
 });
 
 $('.playerx').on('click', function(){
@@ -151,9 +152,21 @@ const checkForWin = function(){
     
 }; // closes winningCombos  
 
+// incorporate 'It's a draw - press new game'
+
+// Once happy with game functioning, add celebration animation once game complete
+
+// add sliding animation to choose your player - CSS???
+
+// maybe change mouse to pointer??
+
+
+
+
 
 
 // store winning combos with a simpler array
+
 // const winningCombos = [
 
 //     winCombo0 = ['0','1','2'],
@@ -161,8 +174,8 @@ const checkForWin = function(){
 //     // for (let i = 0; i < array.length; i++) {
 //     //     const element = array[i];
 //     //     console.log();
-        
-//     // }
+           // }
+
 //     winCombo1 = ['3','4','5'],
 //     winCombo2 = ['6','7','8'],
 //     winCombo3 = ['0','3','6'],
@@ -179,9 +192,3 @@ const checkForWin = function(){
 // ]
 // run loop function through array to detect winning combos
 
-// // incorporate playerX or playerO wins, or It's a draw - press new game
-// const checkWin = function(){
-
-
-
-// Once happy with game functioning, add celebration animation once game complete, and reset/clear with 'New Game' button
