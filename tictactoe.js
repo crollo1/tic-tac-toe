@@ -92,8 +92,30 @@ $('.playero').on('click', function(){
 // ]
 // run loop function through array to detect winning combos
 
-// store winning combos without a simpler array
-const winningCombos = [
+const winningCombos = function(){
+
+    if ('#0'.html() === 'X' && '#1'.html() === 'X' && '#2'.html() === 'X' ){`$(Player X Wins!)`}
+    else if ('#0'.html() === 'O' && '#1'.html() === 'O' && '#2'.html() === 'O' ){`$(Player O Wins!)`} 
+    else if ('#3'.html() === 'X' && '#4'.html() === 'X' && '#5'.html() === 'X' ){`$(Player X Wins!)`} 
+    else if ('#3'.html() === 'O' && '#4'.html() === 'O' && '#5'.html() === 'O' ){`$(Player O Wins!)`} 
+    else if ('#6'.html() === 'X' && '#7'.html() === 'X' && '#8'.html() === 'X' ){`$(Player X Wins!)`} 
+    else if ('#6'.html() === 'O' && '#7'.html() === 'O' && '#8'.html() === 'O' ){`$(Player O Wins!)`} 
+    else if ('#0'.html() === 'X' && '#3'.html() === 'X' && '#6'.html() === 'X' ){`$(Player X Wins!)`} 
+    else if ('#0'.html() === 'O' && '#3'.html() === 'O' && '#6'.html() === 'O' ){`$(Player O Wins!)`} 
+    else if ('#1'.html() === 'X' && '#4'.html() === 'X' && '#7'.html() === 'X' ){`$(Player X Wins!)`} 
+    else if ('#1'.html() === 'O' && '#4'.html() === 'O' && '#7'.html() === 'O' ){`$(Player O Wins!)`} 
+    else if ('#2'.html() === 'X' && '#5'.html() === 'X' && '#8'.html() === 'X' ){`$(Player X Wins!)`} 
+    else if ('#2'.html() === 'O' && '#5'.html() === 'O' && '#8'.html() === 'O' ){`$(Player O Wins!)`} 
+    else if ('#0'.html() === 'X' && '#4'.html() === 'X' && '#8'.html() === 'X' ){`$(Player X Wins!)`} 
+    else if ('#0'.html() === 'O' && '#4'.html() === 'O' && '#8'.html() === 'O' ){`$(Player O Wins!)`} 
+    else if ('#2'.html() === 'X' && '#4'.html() === 'X' && '#6'.html() === 'X' ){`$(Player X Wins!)`} 
+    else if ('#2'.html() === 'O' && '#4'.html() === 'O' && '#6'.html() === 'O' )`{$}(Player O Wins!)` 
+    
+}; // closes winningCombos  
+
+
+// store winning combos with a simpler array
+// const winningCombos = [
 
     winCombo0 = ['0','1','2'],
     winCombo1 = ['3','4','5'],
@@ -102,16 +124,20 @@ const winningCombos = [
     winCombo4 = ['1','4','7'],
     winCombo5 = ['2','5','8'],
     winCombo6 = ['0','4','8'],
-    winCombo7 = ['2','4','6'],
+    winCombo7 = ['2','4','6']
     
-];
+// ]; // closes winningCombos
 
-// write function to check winning combos
-// incorporate playerX or playerO wins, or It's a draw - press new game
-const checkWin = function(){
+// // write function to check winning combos
+// // incorporate playerX or playerO wins, or It's a draw - press new game
+// const checkWin = function(){
 
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i];
+        
+//     }
 
-};
+// };
 
 
 
