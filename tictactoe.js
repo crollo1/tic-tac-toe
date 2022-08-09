@@ -47,12 +47,14 @@ const placeToken = function (  ){
         if (playerX === true) {
             
              $(this).html('X') 
+             checkForWin();
              // if so, make square x
              playerX = false
              // if false, run else
         } else {
             
             $(this).html('O') 
+            checkForWin();
             // if so, place o
             playerX = true
             // change o back to x
@@ -77,14 +79,94 @@ $('.newgame').on('click', function(){
 
 $('.playerx').on('click', function(){
     console.log('you chose player x');
+    playerX = true;
     // $('body').text('You chose Player X')
 });
 
 $('.playero').on('click', function(){
     console.log('you chose player o');
+    playerX = false;
     // $('body').text('You chose Player O')
 });
 
+
+
+// write function to check winning combos
+const checkForWin = function(){
+
+    if ($('#0').html() === 'X' && $('#1').html() === 'X' && $('#2').html() === 'X' ){
+       console.log('player x wins');
+    } else if ($('#0').html() === 'O' && $('#1').html() === 'O' && $('#2').html() === 'O' ){
+        console.log('player o wins');
+    } else if ($('#3').html() === 'X' && $('#4').html() === 'X' && $('#5').html() === 'X' ){
+       console.log('player x wins');
+        
+    } else if ($('#3').html() === 'O' && $('#4').html() === 'O' && $('#5').html() === 'O' ){
+        console.log('player o wins');
+        
+    } else if ($('#6').html() === 'X' && $('#7').html() === 'X' && $('#8').html() === 'X' ){
+       console.log('player x wins');
+        
+    } else if ($('#6').html() === 'O' && $('#7').html() === 'O' && $('#8').html() === 'O' ){
+        console.log('player o wins');
+        
+    } else if ($('#0').html() === 'X' && $('#3').html() === 'X' && $('#6').html() === 'X' ){
+       console.log('player x wins');
+        
+    } else if ($('#0').html() === 'O' && $('#3').html() === 'O' && $('#6').html() === 'O' ){
+        console.log('player o wins');
+        
+    } else if ($('#1').html() === 'X' && $('#4').html() === 'X' && $('#7').html() === 'X' ){
+       console.log('player x wins');
+        
+    } else if ($('#1').html() === 'O' && $('#4').html() === 'O' && $('#7').html() === 'O' ){
+        console.log('player o wins');
+        
+    } else if ($('#2').html() === 'X' && $('#5').html() === 'X' && $('#8').html() === 'X' ){
+       console.log('player x wins');
+        
+    } else if ($('#2').html() === 'O' && $('#5').html() === 'O' && $('#8').html() === 'O' ){
+        console.log('player o wins');
+        
+    } else if ($('#0').html() === 'X' && $('#4').html() === 'X' && $('#8').html() === 'X' ){
+       console.log('player x wins');
+        
+    } else if ($('#0').html() === 'O' && $('#4').html() === 'O' && $('#8').html() === 'O' ){
+        console.log('player o wins');
+        
+    } else if ($('#2').html() === 'X' && $('#4').html() === 'X' && $('#6').html() === 'X' ){
+       console.log('player x wins');
+        
+    } else if ($('#2').html() === 'O' && $('#4').html() === 'O' && $('#6').html() === 'O' ){
+        console.log('player o wins');
+
+    }; 
+
+    
+    
+}; // closes winningCombos  
+
+
+
+// store winning combos with a simpler array
+// const winningCombos = [
+
+//     winCombo0 = ['0','1','2'],
+
+//     // for (let i = 0; i < array.length; i++) {
+//     //     const element = array[i];
+//     //     console.log();
+        
+//     // }
+//     winCombo1 = ['3','4','5'],
+//     winCombo2 = ['6','7','8'],
+//     winCombo3 = ['0','3','6'],
+//     winCombo4 = ['1','4','7'],
+//     winCombo5 = ['2','5','8'],
+//     winCombo6 = ['0','4','8'],
+//     winCombo7 = ['2','4','6']
+    
+// ]; // closes winningCombos
 
 // how do i store a winning combo --> arrays to store combos
 // const winningCombinations = [
@@ -92,62 +174,9 @@ $('.playero').on('click', function(){
 // ]
 // run loop function through array to detect winning combos
 
-const winningCombos = function(){
-
-    if ('#0'.html() === 'X' && '#1'.html() === 'X' && '#2'.html() === 'X' ){`$(Player X Wins!)`}
-    else if ('#0'.html() === 'O' && '#1'.html() === 'O' && '#2'.html() === 'O' ){`$(Player O Wins!)`} 
-    else if ('#3'.html() === 'X' && '#4'.html() === 'X' && '#5'.html() === 'X' ){`$(Player X Wins!)`} 
-    else if ('#3'.html() === 'O' && '#4'.html() === 'O' && '#5'.html() === 'O' ){`$(Player O Wins!)`} 
-    else if ('#6'.html() === 'X' && '#7'.html() === 'X' && '#8'.html() === 'X' ){`$(Player X Wins!)`} 
-    else if ('#6'.html() === 'O' && '#7'.html() === 'O' && '#8'.html() === 'O' ){`$(Player O Wins!)`} 
-    else if ('#0'.html() === 'X' && '#3'.html() === 'X' && '#6'.html() === 'X' ){`$(Player X Wins!)`} 
-    else if ('#0'.html() === 'O' && '#3'.html() === 'O' && '#6'.html() === 'O' ){`$(Player O Wins!)`} 
-    else if ('#1'.html() === 'X' && '#4'.html() === 'X' && '#7'.html() === 'X' ){`$(Player X Wins!)`} 
-    else if ('#1'.html() === 'O' && '#4'.html() === 'O' && '#7'.html() === 'O' ){`$(Player O Wins!)`} 
-    else if ('#2'.html() === 'X' && '#5'.html() === 'X' && '#8'.html() === 'X' ){`$(Player X Wins!)`} 
-    else if ('#2'.html() === 'O' && '#5'.html() === 'O' && '#8'.html() === 'O' ){`$(Player O Wins!)`} 
-    else if ('#0'.html() === 'X' && '#4'.html() === 'X' && '#8'.html() === 'X' ){`$(Player X Wins!)`} 
-    else if ('#0'.html() === 'O' && '#4'.html() === 'O' && '#8'.html() === 'O' ){`$(Player O Wins!)`} 
-    else if ('#2'.html() === 'X' && '#4'.html() === 'X' && '#6'.html() === 'X' ){`$(Player X Wins!)`} 
-    else if ('#2'.html() === 'O' && '#4'.html() === 'O' && '#6'.html() === 'O' )`{$}(Player O Wins!)` 
-    
-}; // closes winningCombos  
-
-
-// store winning combos with a simpler array
-// const winningCombos = [
-
-    winCombo0 = ['0','1','2'],
-    winCombo1 = ['3','4','5'],
-    winCombo2 = ['6','7','8'],
-    winCombo3 = ['0','3','6'],
-    winCombo4 = ['1','4','7'],
-    winCombo5 = ['2','5','8'],
-    winCombo6 = ['0','4','8'],
-    winCombo7 = ['2','4','6']
-    
-// ]; // closes winningCombos
-
-// // write function to check winning combos
 // // incorporate playerX or playerO wins, or It's a draw - press new game
 // const checkWin = function(){
 
-//     for (let i = 0; i < array.length; i++) {
-//         const element = array[i];
-        
-//     }
-
-// };
-
-
-
-
-
-
-// };
-// $(winningCombinations).each([ , ], function( index, value ) {
-//     console.log( );
-//   });
 
 
 // Once happy with game functioning, add celebration animation once game complete, and reset/clear with 'New Game' button
