@@ -59,10 +59,10 @@ const placeToken = function (  ){
             $(this).html('O') 
             // if so, make square o
             checkForWin();
-            //incrementing move count 
+                //incrementing move count 
             playerX = true
             // change o back to x
-
+            
         } // closes else
         moveCount++; // incrementing square count
 
@@ -76,6 +76,7 @@ $('.newgame').on('click', function(){
     isGameActive = false; 
     $('.cell').html(''), // click function to clear game
     $('p').fadeIn( 2000 ); // fade in 'p' text
+    moveCount = 0;
     
 });
 
@@ -161,11 +162,12 @@ const checkForWin = function(){
     
 }; // closes checkForWin 
 
-const winningMessage = function( player ){
+// const winningMessage = function( player ){
 
 
+//     (`Player ${pos0} wins!`);
 
-}
+// }
 
 
 // write winning messages for X and O and It's a draw, add celebration animation to winning messages

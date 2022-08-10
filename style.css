@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
 
+
 body {
     margin: 30px;
     background-color: rgb(16, 232, 152);
@@ -15,7 +16,7 @@ h1 {
     font-size: 80px;
     font-family: 'BhuTuka Expanded One', sans-serif;
     font-weight: 800;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     margin-top: 30px;
 }
 
@@ -55,8 +56,8 @@ footer {
 }
 
 button {
-    margin: 40px 30px 20px 30px;
-    padding: 20px;
+    margin: 20px 10px 30px 10px;
+    padding: 15px;
     font-size: 20px;
     font-family: 'BhuTuka Expanded One', sans-serif; 
     border-radius: 10px;
@@ -72,9 +73,9 @@ button:hover {
 }
 
 p {
-    font-size: 25px;
-    font-family: 'Merienda', sans-serif;
-    margin-top: 5px;
+    font-size: 35px;
+    font-family: 'BhuTuka Expanded One', sans-serif;
+    margin-top: 20px;
     display: none;
     
 }
