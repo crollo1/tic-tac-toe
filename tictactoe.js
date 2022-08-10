@@ -33,17 +33,19 @@ console.log('I can do this!');
 
 // debugger
 let playerX = true;
+let isGameActive = false; // prevent switch token half way through game
+let moveCount = 0; // for use 
 // create function for event listeners
 const placeToken = function (  ){
 
+    isGameActive = true;
     // let contents = $(this).html()
-    
     // check if clicked square is free with no existing HTML
     if ($(this).html() === '') {
-        console.log('free');  
-        // if (this).html() === '') true, run following
+        // console.log('free');  
+        // if (this).html() === '') is true, run following
         
-        // check is the variable true
+        // check is playerX the same as true
         if (playerX === true) {
             
              $(this).html('X') 
@@ -57,39 +59,50 @@ const placeToken = function (  ){
             $(this).html('O') 
             // if so, make square o
             checkForWin();
-             // run check for win function
+            //incrementing move count 
             playerX = true
             // change o back to x
 
         } // closes else
+        moveCount++; // incrementing square count
 
     } // closes check for free square
-
-
 }; // closes placeToken
 
-
-$('.cell').on('click', placeToken); // click functions for each box
+$('.cell').on('click', placeToken); // click function for each box
 
 $('.newgame').on('click', function(){
-    console.log('you clicked new game');
-    $('.cell').html(''); // click function to clear game
+
+    isGameActive = false; 
+    $('.cell').html(''), // click function to clear game
+    $('p').fadeIn( 2000 ); // fade in 'p' text
+    
 });
 
 $('.playerx').on('click', function(){
-    console.log('you chose player x');
-    playerX = true; // if clicked, player X has been selected
+    
+    if (isGameActive === false){ 
+        
+        playerX = true; // if clicked, player X has been selected
+        $('p').fadeOut( 2000 ); // fade out 'p' text
+    };
+
 });
 
 $('.playero').on('click', function(){
-    console.log('you chose player o');
-    playerX = false; // if clicked, player O has been selected
+
+    if (isGameActive === false){
+       
+        playerX = false; // if clicked, player O has been selected
+        $('p').fadeOut( 2000 ); // fade out 'p' text
+    };
+
 });
 
 
 // write function to check winning combos
 const checkForWin = function(){
-
+    
     const pos0 = $('#0').html();
     const pos1 = $('#1').html();
     const pos2 = $('#2').html();
@@ -102,45 +115,65 @@ const checkForWin = function(){
 
     if (pos0 === pos1 && pos0 === pos2 && pos0 !== ''){
         console.log(`Player ${pos0} wins!`);
+        isGameActive = false;
+        winningMessage(pos0)
         // if pos0 same as pos1 and pos 2, and empty then posO wins
     } else if (pos3 === pos4 && pos3 === pos5 && pos3 !== ''){
         console.log(`Player ${pos3} wins!`);
+        isGameActive = false;
+        winningMessage(pos3)
 
     } else if (pos6 === pos7 && pos6 === pos8 && pos6 !== ''){
         console.log(`Player ${pos6} wins!`);
-        
+        isGameActive = false;
+        winningMessage(pos6)
+
     } else if (pos0 === pos3 && pos0 === pos6 && pos0 !== ''){
         console.log(`Player ${pos0} wins!`);
-        
+        isGameActive = false;
+        winningMessage(pos0)
+
     } else if (pos1 === pos4 && pos1 === pos7 && pos1 !== ''){
         console.log(`Player ${pos1} wins!`);
-        
+        isGameActive = false;
+        winningMessage(pos1)
+
     } else if (pos2 === pos5 && pos2 === pos8 && pos2 !== ''){
         console.log(`Player ${pos2} wins!`);
-        
+        isGameActive = false;
+        winningMessage(pos2)
+
     } else if (pos0 === pos4 && pos0 === pos8 && pos0 !== ''){
         console.log(`Player ${pos0} wins!`);
-        
+        isGameActive = false;
+        winningMessage(pos0)
+
     } else if (pos2 === pos4 && pos2 === pos6 && pos2 !== ''){
         console.log(`Player ${pos2} wins!`);
-        
-    } else if (pos0 !== '' && pos1 !== '' && pos2 !== '' && pos3 !== '' && pos4 !== '' && pos5 !== '' && pos6 !== '' && pos7 !== '' && pos8 !== ''){ // if they are not empty, but no winning condition, its a draw
-        console.log(`It's a draw!`);
-    }
-        // console.log(`It's a draw! Click New Game`);
+        isGameActive = false;
+        winningMessage(pos2)
+
+    } else if (moveCount > 7){ 
+        // if they are not empty, but no winning    condition, its a draw
+        console.log(`It's a draw! Press new game`);
+        isGameActive = false;
+    } // closes if-else
     
+}; // closes checkForWin 
 
-    
-    
-}; // closes winningCombos  
+const winningMessage = function( player ){
 
-// incorporate 'It's a draw - press new game'
 
-// Once happy with game functioning, add celebration animation once game complete
 
-// add sliding animation to choose your player - CSS???
+}
 
-// maybe change mouse to pointer??
+
+// write winning messages for X and O and It's a draw, add celebration animation to winning messages
+
+
+
+// DRY up code as much as possible
+
 
 
 
