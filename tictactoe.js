@@ -100,54 +100,35 @@ const checkForWin = function(){
     const pos7 = $('#7').html();
     const pos8 = $('#8').html();
 
-    if (pos0 === 'X' && pos1 === 'X' && pos2 === 'X' ){
-       console.log('player x wins');
-    } else if (pos0 === 'O' && pos1 === 'O' && pos2 === 'O' ){
-        console.log('player o wins');
-    } else if (pos3 === 'X' && pos4 === 'X' && pos5 === 'X' ){
-       console.log('player x wins');
+    if (pos0 === pos1 && pos0 === pos2 && pos0 !== ''){
+        console.log(`Player ${pos0} wins!`);
+        // if pos0 same as pos1 and pos 2, and empty then posO wins
+    } else if (pos3 === pos4 && pos3 === pos5 && pos3 !== ''){
+        console.log(`Player ${pos3} wins!`);
+
+    } else if (pos6 === pos7 && pos6 === pos8 && pos6 !== ''){
+        console.log(`Player ${pos6} wins!`);
         
-    } else if (pos3 === 'O' && pos4 === 'O' && pos5 === 'O' ){
-        console.log('player o wins');
+    } else if (pos0 === pos3 && pos0 === pos6 && pos0 !== ''){
+        console.log(`Player ${pos0} wins!`);
         
-    } else if (pos6 === 'X' && pos7 === 'X' && pos8 === 'X' ){
-       console.log('player x wins');
+    } else if (pos1 === pos4 && pos1 === pos7 && pos1 !== ''){
+        console.log(`Player ${pos1} wins!`);
         
-    } else if (pos6 === 'O' && pos7 === 'O' && pos8 === 'O' ){
-        console.log('player o wins');
+    } else if (pos2 === pos5 && pos2 === pos8 && pos2 !== ''){
+        console.log(`Player ${pos2} wins!`);
         
-    } else if (pos0 === 'X' && pos3 === 'X' && pos6 === 'X' ){
-       console.log('player x wins');
+    } else if (pos0 === pos4 && pos0 === pos8 && pos0 !== ''){
+        console.log(`Player ${pos0} wins!`);
         
-    } else if (pos0 === 'O' && pos3 === 'O' && pos6 === 'O' ){
-        console.log('player o wins');
+    } else if (pos2 === pos4 && pos2 === pos6 && pos2 !== ''){
+        console.log(`Player ${pos2} wins!`);
         
-    } else if (pos1 === 'X' && pos4 === 'X' && pos7 === 'X' ){
-       console.log('player x wins');
-        
-    } else if (pos1 === 'O' && pos4 === 'O' && pos7 === 'O' ){
-        console.log('player o wins');
-        
-    } else if (pos2 === 'X' && pos5 === 'X' && pos8 === 'X' ){
-       console.log('player x wins');
-        
-    } else if (pos2 === 'O' && pos5 === 'O' && pos8 === 'O' ){
-        console.log('player o wins');
-        
-    } else if (pos0 === 'X' && pos4 === 'X' && pos8 === 'X' ){
-       console.log('player x wins');
-        
-    } else if (pos0 === 'O' && pos4 === 'O' && pos8 === 'O' ){
-        console.log('player o wins');
-        
-    } else if (pos2 === 'X' && pos4 === 'X' && pos6 === 'X' ){
-       console.log('player x wins');
-        
-    } else if (pos2 === 'O' && pos4 === 'O' && pos6 === 'O' ){
-        console.log('player o wins');
-    } else {
-        console.log(`It's a draw! Click New Game`);
-    }; 
+    } else if (pos0 !== '' && pos1 !== '' && pos2 !== '' && pos3 !== '' && pos4 !== '' && pos5 !== '' && pos6 !== '' && pos7 !== '' && pos8 !== ''){ // if they are not empty, but no winning condition, its a draw
+        console.log(`It's a draw!`);
+    }
+        // console.log(`It's a draw! Click New Game`);
+    
 
     
     
