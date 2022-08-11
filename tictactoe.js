@@ -39,10 +39,10 @@ let moveCount = 0; // for use
 const placeToken = function (  ){
 
     isGameActive = true;
-    // let contents = $(this).html()
+    
     // check if clicked square is free with no existing HTML
     if ($(this).html() === '') {
-        // console.log('free');  
+
         // if (this).html() === '') is true, run following
         
         // check is playerX the same as true
@@ -71,36 +71,6 @@ const placeToken = function (  ){
 
 $('.cell').on('click', placeToken); // click function for each box
 
-$('.newgame').on('click', function(){
-
-    isGameActive = false; 
-    $('.cell').html(''), // click function to clear game
-    $('p').fadeIn( 2000 ); // fade in 'p' text
-    moveCount = 0;
-    
-});
-
-$('.playerx').on('click', function(){
-    
-    if (isGameActive === false){ 
-        
-        playerX = true; // if clicked, player X has been selected
-        $('p').fadeOut( 2000 ); // fade out 'p' text
-    };
-
-});
-
-$('.playero').on('click', function(){
-
-    if (isGameActive === false){
-       
-        playerX = false; // if clicked, player O has been selected
-        $('p').fadeOut( 2000 ); // fade out 'p' text
-    };
-
-});
-
-
 // write function to check winning combos
 const checkForWin = function(){
     
@@ -115,56 +85,107 @@ const checkForWin = function(){
     const pos8 = $('#8').html();
 
     if (pos0 === pos1 && pos0 === pos2 && pos0 !== ''){
-        console.log(`Player ${pos0} wins!`);
+        // debugger
         isGameActive = false;
-        winningMessage(pos0)
+        $('h2').html(`Player ${pos0} wins!`);
+        $('img').show();
+        // winningMessage(pos0);
         // if pos0 same as pos1 and pos 2, and empty then posO wins
     } else if (pos3 === pos4 && pos3 === pos5 && pos3 !== ''){
-        console.log(`Player ${pos3} wins!`);
         isGameActive = false;
-        winningMessage(pos3)
+        $('h2').html(`Player ${pos3} wins!`);
+        $('img').show();
+        // winningMessage(pos3);
 
     } else if (pos6 === pos7 && pos6 === pos8 && pos6 !== ''){
-        console.log(`Player ${pos6} wins!`);
         isGameActive = false;
-        winningMessage(pos6)
+        $('h2').html(`Player ${pos6} wins!`);
+        $('img').show();
+        // winningMessage(pos6);
 
     } else if (pos0 === pos3 && pos0 === pos6 && pos0 !== ''){
-        console.log(`Player ${pos0} wins!`);
         isGameActive = false;
-        winningMessage(pos0)
+        $('h2').html(`Player ${pos0} wins!`);
+        $('img').show();
+        // winningMessage(pos0);
 
     } else if (pos1 === pos4 && pos1 === pos7 && pos1 !== ''){
-        console.log(`Player ${pos1} wins!`);
         isGameActive = false;
-        winningMessage(pos1)
+        $('h2').html(`Player ${pos1} wins!`);
+        $('img').show();
+        // winningMessage(pos1);
 
     } else if (pos2 === pos5 && pos2 === pos8 && pos2 !== ''){
-        console.log(`Player ${pos2} wins!`);
         isGameActive = false;
-        winningMessage(pos2)
+        $('h2').html(`Player ${pos2} wins!`);
+        $('img').show();
+        // winningMessage(pos2);
 
     } else if (pos0 === pos4 && pos0 === pos8 && pos0 !== ''){
-        console.log(`Player ${pos0} wins!`);
         isGameActive = false;
-        winningMessage(pos0)
+        $('h2').html(`Player ${pos0} wins!`);
+        $('img').show();
+        // winningMessage(pos0);
 
     } else if (pos2 === pos4 && pos2 === pos6 && pos2 !== ''){
-        console.log(`Player ${pos2} wins!`);
         isGameActive = false;
-        winningMessage(pos2)
+        $('h2').html(`Player ${pos2} wins!`);
+        $('img').show();
+        // winningMessage(pos2);
 
     } else if (moveCount > 7){ 
         // if they are not empty, but no winning    condition, its a draw
-        console.log(`It's a draw! Press new game`);
         isGameActive = false;
+        $('h2').html(`It's a draw! Click new game`);
     } // closes if-else
     
+    if (isGameActive === false) {
+        
+        $('h2').show();
+
+    };
 }; // closes checkForWin 
+
+$('.newgame').on('click', function(){
+
+    isGameActive = false; 
+    $('.cell').html(''), // click function to clear game
+    $('p').fadeIn( 2000 ); // fade in 'p' text
+    $('h2').fadeOut( 1000 );
+    $('img').hide();
+    moveCount = 0;
+    
+});
+
+$('.playerx').on('click', function(){
+    
+    if (isGameActive === false){ 
+        
+        playerX = true; // if clicked, player X has been selected
+        $('p').fadeOut( 2000 ); // fade out 'p' text
+
+    };
+
+});
+
+$('.playero').on('click', function(){
+
+    if (isGameActive === false){
+       
+        playerX = false; // if clicked, player O has been selected
+        $('p').fadeOut( 2000 ); // fade out 'p' text
+
+    };
+
+});
 
 // const winningMessage = function( player ){
 
+//     $('.container').append(`Player ${pos0} wins!`)
 
+//     if ( player = ){
+
+//     }
 //     (`Player ${pos0} wins!`);
 
 // }
