@@ -71,6 +71,14 @@ const placeToken = function (  ){
 
 $('.cell').on('click', placeToken); // click function for each box
 
+const winningMessage = function( position ){
+
+    isGameActive = false;
+    $('h2').html(`Player ${position} wins!`);
+    $('img').show();
+
+};
+
 // write function to check winning combos
 const checkForWin = function(){
     
@@ -84,57 +92,40 @@ const checkForWin = function(){
     const pos7 = $('#7').html();
     const pos8 = $('#8').html();
 
-    if (pos0 === pos1 && pos0 === pos2 && pos0 !== ''){
-        // debugger
-        isGameActive = false;
-        $('h2').html(`Player ${pos0} wins!`);
-        $('img').show();
-        // winningMessage(pos0);
-        // if pos0 same as pos1 and pos 2, and empty then posO wins
-    } else if (pos3 === pos4 && pos3 === pos5 && pos3 !== ''){
-        isGameActive = false;
-        $('h2').html(`Player ${pos3} wins!`);
-        $('img').show();
-        // winningMessage(pos3);
+    if (pos0 === pos1 && pos0 === pos2 && pos0 !== '') { // 1st row
 
-    } else if (pos6 === pos7 && pos6 === pos8 && pos6 !== ''){
-        isGameActive = false;
-        $('h2').html(`Player ${pos6} wins!`);
-        $('img').show();
-        // winningMessage(pos6);
+        winningMessage(pos0);
+        
+    } else if (pos3 === pos4 && pos3 === pos5 && pos3 !== ''){ // 2nd row
+        
+        winningMessage(pos3);
 
-    } else if (pos0 === pos3 && pos0 === pos6 && pos0 !== ''){
-        isGameActive = false;
-        $('h2').html(`Player ${pos0} wins!`);
-        $('img').show();
-        // winningMessage(pos0);
+    } else if (pos6 === pos7 && pos6 === pos8 && pos6 !== ''){ // 3rd row
+        
+        winningMessage(pos6);
 
-    } else if (pos1 === pos4 && pos1 === pos7 && pos1 !== ''){
-        isGameActive = false;
-        $('h2').html(`Player ${pos1} wins!`);
-        $('img').show();
-        // winningMessage(pos1);
+    } else if (pos0 === pos3 && pos0 === pos6 && pos0 !== ''){// 1st column
+        
+        winningMessage(pos0);
 
-    } else if (pos2 === pos5 && pos2 === pos8 && pos2 !== ''){
-        isGameActive = false;
-        $('h2').html(`Player ${pos2} wins!`);
-        $('img').show();
-        // winningMessage(pos2);
+    } else if (pos1 === pos4 && pos1 === pos7 && pos1 !== ''){// 2nd column
+        
+        winningMessage(pos1);
 
-    } else if (pos0 === pos4 && pos0 === pos8 && pos0 !== ''){
-        isGameActive = false;
-        $('h2').html(`Player ${pos0} wins!`);
-        $('img').show();
-        // winningMessage(pos0);
+    } else if (pos2 === pos5 && pos2 === pos8 && pos2 !== ''){// 3rd column
+        
+        winningMessage(pos2);
 
-    } else if (pos2 === pos4 && pos2 === pos6 && pos2 !== ''){
-        isGameActive = false;
-        $('h2').html(`Player ${pos2} wins!`);
-        $('img').show();
-        // winningMessage(pos2);
+    } else if (pos0 === pos4 && pos0 === pos8 && pos0 !== ''){// left diag
+        
+        winningMessage(pos0);
+
+    } else if (pos2 === pos4 && pos2 === pos6 && pos2 !== ''){// right diag
+        
+        winningMessage(pos2);
 
     } else if (moveCount > 7){ 
-        // if they are not empty, but no winning    condition, its a draw
+        // if they are not empty, but no winning condition, its a draw
         isGameActive = false;
         $('h2').html(`It's a draw! Click new game`);
     } // closes if-else
@@ -151,8 +142,8 @@ $('.newgame').on('click', function(){
     isGameActive = false; 
     $('.cell').html(''), // click function to clear game
     $('p').fadeIn( 2000 ); // fade in 'p' text
-    $('h2').fadeOut( 1000 );
-    $('img').hide();
+    $('h2').fadeOut( 1000 ); // fades out h2 with reset
+    $('img').hide(); // hides celebration gif
     moveCount = 0;
     
 });
@@ -162,7 +153,7 @@ $('.playerx').on('click', function(){
     if (isGameActive === false){ 
         
         playerX = true; // if clicked, player X has been selected
-        $('p').fadeOut( 2000 ); // fade out 'p' text
+        $('p').fadeOut( 1000 ); // fade out 'p' text
 
     };
 
@@ -173,22 +164,13 @@ $('.playero').on('click', function(){
     if (isGameActive === false){
        
         playerX = false; // if clicked, player O has been selected
-        $('p').fadeOut( 2000 ); // fade out 'p' text
+        $('p').fadeOut( 1000 ); // fade out 'p' text
 
     };
 
 });
 
-// const winningMessage = function( player ){
 
-//     $('.container').append(`Player ${pos0} wins!`)
-
-//     if ( player = ){
-
-//     }
-//     (`Player ${pos0} wins!`);
-
-// }
 
 
 // write winning messages for X and O and It's a draw, add celebration animation to winning messages

@@ -6,12 +6,12 @@ header {
     height: 220px;
 }
 
-img{
+img {
     position: absolute;
     border-radius: 5px;
+    border: 3px solid rgb(18, 176, 234);
     margin-bottom: 20px;
-    display: none;
-   
+    display: none; 
 }
 
 body {
@@ -32,20 +32,25 @@ h1 {
 }
 
 h2 {
-    margin-top: -10px;
+    margin-top: -15px;
+    text-align: center;
     font-family: 'Merienda';
     display: hidden;
+    color: white; 
+    font-size: 30px;
 }
 
 footer {
     cursor: pointer;
+    height: 50px;
+    margin-top: 0px;
 }
 
 .container {
     background: rgb(18, 176, 234);
     display: inline-block;
     margin-top: 10px;
-    
+    margin-bottom: -20px;
 }
 
 .grid {
@@ -93,7 +98,7 @@ button:hover {
 p {
     font-size: 35px;
     font-family: 'BhuTuka Expanded One', sans-serif;
-    margin-top: 20px;
+    padding-top: 5px;
     display: none;
     
 }
@@ -102,6 +107,13 @@ p {
 
     h1 {
         font-size: 40px;
+    }
+    h2 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    header {
+        height: 150px;
     }
     button {
         font-size: 10px;
@@ -117,6 +129,11 @@ p {
     }
     p {
         font-size: 20px;
+    }
+    img {
+        position: absolute;
+        height: 330px;
+        width: 330px;
     }
 
 }
