@@ -11,6 +11,8 @@ let currentPlayer = 'X';
 let isGameActive = false; // prevent switch token half way through game
 let moveCount = 0; // for use 
 // create function for event listeners
+$('.img2').show();
+
 const placeToken = function (  ){
 
     isGameActive = true;
@@ -38,9 +40,10 @@ $('.cell').on('click', placeToken); // click function for each box
 const winningMessage = function( position ){ 
 
     isGameActive = false;
-    $('h2').html(`Player ${position} wins!`);
-    $('img').show();
+    $('h2').html(`Congratulations Player ${position} wins!`);
+    $('.img1').show(500);
 
+    
 };
 
 // write function to check winning combos
@@ -76,7 +79,7 @@ const checkForWin = function(){
     if (isGameActive === false) { // when game over, show winning message 
         
         $('h2').show();
-
+        
     }; // closes if
 
 }; // closes checkForWin 
@@ -87,7 +90,8 @@ $('.newgame').on('click', function(){
     $('.cell').html(''), // click function to clear game
     $('p').fadeIn( 1000 ); // fade in 'p' text
     $('h2').fadeOut( 1000 ); // fades out h2 with reset
-    $('img').hide(); // hides celebration gif
+    $('.img1').hide(); // hides celebration gif
+    $('.img2').show();
     moveCount = 0;
     
 });
@@ -98,6 +102,7 @@ $('.playerx').on('click', function(){
         
         currentPlayer = 'X'; // if clicked, player X has been selected
         $('p').fadeOut( 1000 ); // fade out 'p' text
+        $('.img2').hide();
 
     };
 
@@ -109,6 +114,7 @@ $('.playero').on('click', function(){
        
         currentPlayer = 'O'; // if clicked, player O has been selected
         $('p').fadeOut( 1000 ); // fade out 'p' text
+        $('.img2').hide();
 
     };
 

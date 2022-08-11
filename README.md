@@ -2,7 +2,7 @@
 
 https://crollo1.github.io/tic-tac-toe/ - Here, check out my game! This is my first project for GA, 2 weeks into the course. Enjoy!
 
-![My Tic Tac Toe](screenshot.png)
+![My Tic Tac Toe](screenshot2.png)
 
 
 • a general description of the project

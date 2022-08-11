@@ -6,12 +6,23 @@ header {
     height: 220px;
 }
 
-img {
+.img1 {
     position: absolute;
-    border-radius: 5px;
-    border: 3px solid rgb(18, 176, 234);
+    border-radius: 10px;
+    border: 3px solid rgb(255, 255, 255);
     margin-bottom: 20px;
     display: none; 
+    height: 460px;
+}
+
+.img2 {
+    position: absolute;
+    border-radius: 10px;
+    border: 3px solid rgb(255, 255, 255);
+    margin-bottom: 20px;
+    display: none; 
+    height: 460px;
+
 }
 
 body {
@@ -144,12 +155,17 @@ p {
         font-size: 20px;
     }
 
-    img {
+    .img1 {
         position: absolute;
         height: 330px;
         width: 330px;
     }
 
+    .img2 {
+        position: absolute;
+        height: 330px;
+        width: 330px; 
+    }
 }
 
 
