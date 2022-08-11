@@ -65,21 +65,15 @@ const checkForWin = function(){
      || pos0 === pos4 && pos0 === pos8 && pos0 !== '' 
      || pos2 === pos4 && pos2 === pos6 && pos2 !== '') { // 1st row
             
-        winningMessage( currentPlayer );
-        // let winningToken = '';
-        // if (playerX === true){
-        //     winningToken = 'X'
-        // } else {
-        //     winningToken = 'O'
-        // };       
-
+        winningMessage( currentPlayer ); // last token placed = win
+       
     } else if (moveCount > 7){ 
         // if they are not empty, but no winning condition, its a draw
         isGameActive = false;
         $('h2').html(`It's a draw! Click new game`);
     } // closes if-else
     
-    if (isGameActive === false) {
+    if (isGameActive === false) { // when game over, show winning message 
         
         $('h2').show();
 

@@ -18,7 +18,6 @@ body {
     margin: 30px;
     background-color: rgb(16, 232, 152);
     text-align: center;
-    /* font-family: 'BhuTuka Expanded One'; */
     cursor: pointer;
 }
 
@@ -62,7 +61,7 @@ footer {
   }
 
 .cell {
-    /* center the cell content */
+
    justify-content: center;
    align-items: center;
    display: flex;
@@ -76,6 +75,7 @@ footer {
 
 .cell:hover {
     background-color: rgb(235, 226, 58);
+    transform: scale(1.1);
 }
 
 button {
@@ -93,6 +93,7 @@ button {
 button:hover {
     background-color: black;
     color: white;
+    transform: scale(1.2);
 }
 
 p {
@@ -108,28 +109,35 @@ p {
     h1 {
         font-size: 40px;
     }
+
     h2 {
         font-size: 20px;
         margin-top: 10px;
     }
+
     header {
         height: 150px;
     }
+
     button {
         font-size: 10px;
         margin: 10px;
         padding: 10px;
     }
+
     .grid {
         grid-template-columns: repeat(3, 100px);
         grid-template-rows: repeat(3, 100px);
     }
+
     .cell {
         font-size: 40px;
     }
+
     p {
         font-size: 20px;
     }
+
     img {
         position: absolute;
         height: 330px;
