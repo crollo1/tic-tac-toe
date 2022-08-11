@@ -7,7 +7,7 @@
 // use event listeners for click functions i.e. detecting click on each square. // each box will need an event listener.
 
 // debugger
-let currentPlayer = 'X';
+let currentPlayer = 'X'; 
 let isGameActive = false; // prevent switch token half way through game
 let moveCount = 0; // for move number 
 
@@ -16,7 +16,7 @@ let moveCount = 0; // for move number
 
 const placeToken = function (  ){
 
-    isGameActive = true;
+    isGameActive = true; // allows initial token selection
     
     // check if clicked square is free with no existing HTML
     if ($(this).html() === '') { // if true, run following
@@ -92,7 +92,7 @@ $('.newgame').on('click', function(){
     $('p').fadeIn( 1000 ); // fade in 'p' text
     $('h2').fadeOut( 1000 ); // fades out h2 with reset
     $('.img1').hide(); // hides celebration gif
-    $('.img2').show();
+    $('.img2').show(); // shows cookie
     moveCount = 0;
     
 });

@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
 
 header {
-    height: 220px;
+    /* height: 220px; */
 }
 
 .img1 {
@@ -13,6 +13,7 @@ header {
     margin-bottom: 20px;
     display: none; 
     height: 460px;
+    z-index: 100;
 }
 
 .img2 {
@@ -82,7 +83,8 @@ footer {
    border-radius: 10px;
    display: flex;
    font-family: 'BhuTuka Expanded One', sans-serif;
-   font-size: 80px;
+   font-size: 90px;
+   color: rgb(241, 241, 143);
    font-weight: bold;
    background: rgb(63,94,251);
    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
@@ -133,7 +135,7 @@ p {
     }
 
     header {
-        height: 180px;
+        /* height: 180px; */
     }
 
     button {
@@ -156,17 +158,13 @@ p {
         margin-top: 50px;
     }
 
-    .img1 {
+    .img1, .img2 {
         position: absolute;
         height: 400px;
         width: 400px;
     }
 
-    .img2 {
-        position: absolute;
-        height: 400px;
-        width: 400px; 
-    }
+   
 
 }
 
@@ -182,7 +180,7 @@ p {
     }
 
     header {
-        height: 150px;
+        /* height: 150px; */
     }
 
     button {
@@ -194,6 +192,7 @@ p {
     .grid {
         grid-template-columns: repeat(3, 100px);
         grid-template-rows: repeat(3, 100px);
+
     }
 
     .cell {
@@ -205,17 +204,12 @@ p {
         margin-top: 50px;
     }
 
-    .img1 {
+    .img1, .img2 {
         position: absolute;
-        height: 330px;
-        width: 330px;
+        height: 310px;
+        width: 310px;
     }
 
-    .img2 {
-        position: absolute;
-        height: 330px;
-        width: 330px; 
-    }
 }
 
 
