@@ -20,7 +20,7 @@ header {
     border-radius: 10px;
     border: 3px solid rgb(255, 255, 255);
     margin-bottom: 20px;
-    display: none; 
+    /* display: none;  */
     height: 460px;
 
 }
