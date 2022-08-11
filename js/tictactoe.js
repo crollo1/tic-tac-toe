@@ -16,16 +16,14 @@ const placeToken = function (  ){
     isGameActive = true;
     
     // check if clicked square is free with no existing HTML
-    if ($(this).html() === '') {
-
-        // if (this).html() === '') is true, run following
+    if ($(this).html() === '') { // if true, run following
         
         $(this).html( currentPlayer ); 
-        checkForWin();
+        checkForWin(); // needs to run before token change
 
         // check is currentPlayer X
         if ( currentPlayer === 'X') {
-            
+
              currentPlayer = 'O'; // if false, run else
         } else {
             currentPlayer = 'X' // change o back to x
@@ -37,7 +35,7 @@ const placeToken = function (  ){
 
 $('.cell').on('click', placeToken); // click function for each box
 
-const winningMessage = function( position ){
+const winningMessage = function( position ){ 
 
     isGameActive = false;
     $('h2').html(`Player ${position} wins!`);
@@ -123,13 +121,6 @@ $('.playero').on('click', function(){
 });
 
 
-
-
-// write winning messages for X and O and It's a draw, add celebration animation to winning messages
-
-
-
-// DRY up code as much as possible
 
 
 
