@@ -44,7 +44,7 @@ h1 {
 }
 
 h2 {
-    margin-top: 10px;
+    margin-top: -15px;
     text-align: center;
     font-family: 'Merienda';
     display: hidden;
@@ -120,6 +120,56 @@ p {
     display: none;
 }
 
+@media (max-width: 715px) {
+
+
+    h1 {
+        font-size: 60px;
+    }
+
+    h2 {
+        font-size: 25px;
+        margin-top: 0px;
+    }
+
+    header {
+        height: 180px;
+    }
+
+    button {
+        font-size: 15px;
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 125px);
+        grid-template-rows: repeat(3, 125px);
+    }
+
+    .cell {
+        font-size: 60px;
+    }
+
+    p {
+        font-size: 30px;
+        margin-top: 50px;
+    }
+
+    .img1 {
+        position: absolute;
+        height: 400px;
+        width: 400px;
+    }
+
+    .img2 {
+        position: absolute;
+        height: 400px;
+        width: 400px; 
+    }
+
+}
+
 @media (max-width: 550px) {
 
     h1 {
@@ -136,9 +186,9 @@ p {
     }
 
     button {
-        font-size: 10px;
-        margin: 10px;
-        padding: 10px;
+        font-size: 15px;
+        margin: 5px;
+        padding: 5px;
     }
 
     .grid {
@@ -151,7 +201,7 @@ p {
     }
 
     p {
-        font-size: 20px;
+        font-size: 25px;
         margin-top: 50px;
     }
 
