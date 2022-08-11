@@ -101,7 +101,7 @@ const checkForWin = function(){
         || pos0 === pos4 && pos0 === pos8 && pos0 !== '' 
         || pos2 === pos4 && pos2 === pos6 && pos2 !== '') { // 1st row
 
-        winningMessage(  );
+        winningMessage( pos0 );
         
     // } else if (pos3 === pos4 && pos3 === pos5 && pos3 !== ''){ // 2nd row
         
