@@ -9,9 +9,10 @@
 // debugger
 let currentPlayer = 'X';
 let isGameActive = false; // prevent switch token half way through game
-let moveCount = 0; // for use 
+let moveCount = 0; // for move number 
+
 // create function for event listeners
-$('.img2').show();
+
 
 const placeToken = function (  ){
 
@@ -30,7 +31,7 @@ const placeToken = function (  ){
         } else {
             currentPlayer = 'X' // change o back to x
         } // closes else
-        moveCount++; // incrementing square count
+        moveCount++; // total clicked square count
 
     } // closes check for free square
 }; // closes placeToken
@@ -40,7 +41,7 @@ $('.cell').on('click', placeToken); // click function for each box
 const winningMessage = function( position ){ 
 
     isGameActive = false;
-    $('h2').html(`Congratulations Player ${position} wins!`);
+    $('h2').html(`Congratulations, Player ${position} wins!`);
     $('.img1').show(500);
 
     
@@ -101,7 +102,7 @@ $('.playerx').on('click', function(){
     if (isGameActive === false){ 
         
         currentPlayer = 'X'; // if clicked, player X has been selected
-        $('p').fadeOut( 1000 ); // fade out 'p' text
+        $('p').fadeOut( 800 ); // fade out 'p' text
         $('.img2').hide();
 
     };
@@ -113,7 +114,7 @@ $('.playero').on('click', function(){
     if (isGameActive === false){
        
         currentPlayer = 'O'; // if clicked, player O has been selected
-        $('p').fadeOut( 1000 ); // fade out 'p' text
+        $('p').fadeOut( 800 ); // fade out 'p' text
         $('.img2').hide();
 
     };
