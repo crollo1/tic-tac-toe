@@ -44,7 +44,7 @@ h1 {
 }
 
 h2 {
-    margin-top: -15px;
+    margin-top: 10px;
     text-align: center;
     font-family: 'Merienda';
     display: hidden;
@@ -118,7 +118,6 @@ p {
     font-family: 'BhuTuka Expanded One', sans-serif;
     padding-top: 5px;
     display: none;
-    
 }
 
 @media (max-width: 550px) {
@@ -153,6 +152,7 @@ p {
 
     p {
         font-size: 20px;
+        margin-top: 50px;
     }
 
     .img1 {
