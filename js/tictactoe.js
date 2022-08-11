@@ -48,19 +48,19 @@ const placeToken = function (  ){
         // check is playerX the same as true
         if (playerX === true) {
             
-             $(this).html('X') 
+             $(this).html('X'); 
              // if so, make square x
              checkForWin();
              // run check for win function
-             playerX = false
+             playerX = false;
              // if false, run else
         } else {
             
-            $(this).html('O') 
+            $(this).html('O'); 
             // if so, make square o
             checkForWin();
                 //incrementing move count 
-            playerX = true
+            playerX = true;
             // change o back to x
             
         } // closes else
@@ -92,37 +92,44 @@ const checkForWin = function(){
     const pos7 = $('#7').html();
     const pos8 = $('#8').html();
 
-    if (pos0 === pos1 && pos0 === pos2 && pos0 !== '') { // 1st row
+    if (pos0 === pos1 && pos0 === pos2 && pos0 !== '' 
+        || pos3 === pos4 && pos3 === pos5 && pos3 !== '' 
+        || pos6 === pos7 && pos6 === pos8 && pos6 !== '' 
+        || pos0 === pos3 && pos0 === pos6 && pos0 !== '' 
+        || pos1 === pos4 && pos1 === pos7 && pos1 !== '' 
+        || pos2 === pos5 && pos2 === pos8 && pos2 !== '' 
+        || pos0 === pos4 && pos0 === pos8 && pos0 !== '' 
+        || pos2 === pos4 && pos2 === pos6 && pos2 !== '') { // 1st row
 
-        winningMessage(pos0);
+        winningMessage(  );
         
-    } else if (pos3 === pos4 && pos3 === pos5 && pos3 !== ''){ // 2nd row
+    // } else if (pos3 === pos4 && pos3 === pos5 && pos3 !== ''){ // 2nd row
         
-        winningMessage(pos3);
+    //     winningMessage(pos3);
 
-    } else if (pos6 === pos7 && pos6 === pos8 && pos6 !== ''){ // 3rd row
+    // } else if (pos6 === pos7 && pos6 === pos8 && pos6 !== ''){ // 3rd row
         
-        winningMessage(pos6);
+    //     winningMessage(pos6);
 
-    } else if (pos0 === pos3 && pos0 === pos6 && pos0 !== ''){// 1st column
+    // } else if (pos0 === pos3 && pos0 === pos6 && pos0 !== ''){// 1st column
         
-        winningMessage(pos0);
+    //     winningMessage(pos0);
 
-    } else if (pos1 === pos4 && pos1 === pos7 && pos1 !== ''){// 2nd column
+    // } else if (pos1 === pos4 && pos1 === pos7 && pos1 !== ''){// 2nd column
         
-        winningMessage(pos1);
+    //     winningMessage(pos1);
 
-    } else if (pos2 === pos5 && pos2 === pos8 && pos2 !== ''){// 3rd column
+    // } else if (pos2 === pos5 && pos2 === pos8 && pos2 !== ''){// 3rd column
         
-        winningMessage(pos2);
+    //     winningMessage(pos2);
 
-    } else if (pos0 === pos4 && pos0 === pos8 && pos0 !== ''){// left diag
+    // } else if (pos0 === pos4 && pos0 === pos8 && pos0 !== ''){// left diag
         
-        winningMessage(pos0);
+    //     winningMessage(pos0);
 
-    } else if (pos2 === pos4 && pos2 === pos6 && pos2 !== ''){// right diag
+    // } else if (pos2 === pos4 && pos2 === pos6 && pos2 !== ''){// right diag
         
-        winningMessage(pos2);
+    //     winningMessage(pos2);
 
     } else if (moveCount > 7){ 
         // if they are not empty, but no winning condition, its a draw
@@ -134,14 +141,15 @@ const checkForWin = function(){
         
         $('h2').show();
 
-    };
+    }; // closes if
+
 }; // closes checkForWin 
 
 $('.newgame').on('click', function(){
 
     isGameActive = false; 
     $('.cell').html(''), // click function to clear game
-    $('p').fadeIn( 2000 ); // fade in 'p' text
+    $('p').fadeIn( 1000 ); // fade in 'p' text
     $('h2').fadeOut( 1000 ); // fades out h2 with reset
     $('img').hide(); // hides celebration gif
     moveCount = 0;

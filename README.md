@@ -11,4 +11,4 @@ Your README.md should include:
 • anything else you want to record about the project or the experience
 • a wishlist of any leftover features you'd like to add later
 Check out this guide to writing a file in Markdown (.md) format, it's easy
-You can even turn on a Markdown Preview mode from a .md file you're editing in VS Code with the shortcut cmd + shift + v  (or search for "markdown" in the Command Palette) - use split panel mode to see both the source file and the preview on the same screen and try out the markdown syntax interactively  :zap: (edited) 
+You can even turn on a Markdown Preview mode from a .md file you're editing in VS Code with the shortcut cmd + shift + v  (or search for "markdown" in the Command Palette) - use split panel mode to see both the source file and the preview on the same screen and try out the markdown syntax interactively  :zap: (edited) winningMessage( pos0 );
