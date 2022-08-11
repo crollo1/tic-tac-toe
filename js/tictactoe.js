@@ -7,7 +7,7 @@
 // use event listeners for click functions i.e. detecting click on each square. // each box will need an event listener.
 
 // debugger
-let playerX = true;
+let currentPlayer = 'X';
 let isGameActive = false; // prevent switch token half way through game
 let moveCount = 0; // for use 
 // create function for event listeners
@@ -20,24 +20,15 @@ const placeToken = function (  ){
 
         // if (this).html() === '') is true, run following
         
-        // check is playerX the same as true
-        if (playerX === true) {
+        $(this).html( currentPlayer ); 
+        checkForWin();
+
+        // check is currentPlayer X
+        if ( currentPlayer === 'X') {
             
-             $(this).html('X'); 
-             // if so, make square x
-             checkForWin();
-             // run check for win function
-             playerX = false;
-             // if false, run else
+             currentPlayer = 'O'; // if false, run else
         } else {
-            
-            $(this).html('O'); 
-            // if so, make square o
-            checkForWin();
-                //incrementing move count 
-            playerX = true;
-            // change o back to x
-            
+            currentPlayer = 'X' // change o back to x
         } // closes else
         moveCount++; // incrementing square count
 
@@ -68,43 +59,21 @@ const checkForWin = function(){
     const pos8 = $('#8').html();
 
     if (pos0 === pos1 && pos0 === pos2 && pos0 !== '' 
-        || pos3 === pos4 && pos3 === pos5 && pos3 !== '' 
-        || pos6 === pos7 && pos6 === pos8 && pos6 !== '' 
-        || pos0 === pos3 && pos0 === pos6 && pos0 !== '' 
-        || pos1 === pos4 && pos1 === pos7 && pos1 !== '' 
-        || pos2 === pos5 && pos2 === pos8 && pos2 !== '' 
-        || pos0 === pos4 && pos0 === pos8 && pos0 !== '' 
-        || pos2 === pos4 && pos2 === pos6 && pos2 !== '') { // 1st row
-
-        winningMessage( pos0 || pos3 || pos6 || pos1 || pos2 );
-        
-    // } else if (pos3 === pos4 && pos3 === pos5 && pos3 !== ''){ // 2nd row
-        
-    //     winningMessage(pos3);
-
-    // } else if (pos6 === pos7 && pos6 === pos8 && pos6 !== ''){ // 3rd row
-        
-    //     winningMessage(pos6);
-
-    // } else if (pos0 === pos3 && pos0 === pos6 && pos0 !== ''){// 1st column
-        
-    //     winningMessage(pos0);
-
-    // } else if (pos1 === pos4 && pos1 === pos7 && pos1 !== ''){// 2nd column
-        
-    //     winningMessage(pos1);
-
-    // } else if (pos2 === pos5 && pos2 === pos8 && pos2 !== ''){// 3rd column
-        
-    //     winningMessage(pos2);
-
-    // } else if (pos0 === pos4 && pos0 === pos8 && pos0 !== ''){// left diag
-        
-    //     winningMessage(pos0);
-
-    // } else if (pos2 === pos4 && pos2 === pos6 && pos2 !== ''){// right diag
-        
-    //     winningMessage(pos2);
+     || pos3 === pos4 && pos3 === pos5 && pos3 !== '' 
+     || pos6 === pos7 && pos6 === pos8 && pos6 !== '' 
+     || pos0 === pos3 && pos0 === pos6 && pos0 !== '' 
+     || pos1 === pos4 && pos1 === pos7 && pos1 !== '' 
+     || pos2 === pos5 && pos2 === pos8 && pos2 !== '' 
+     || pos0 === pos4 && pos0 === pos8 && pos0 !== '' 
+     || pos2 === pos4 && pos2 === pos6 && pos2 !== '') { // 1st row
+            
+        winningMessage( currentPlayer );
+        // let winningToken = '';
+        // if (playerX === true){
+        //     winningToken = 'X'
+        // } else {
+        //     winningToken = 'O'
+        // };       
 
     } else if (moveCount > 7){ 
         // if they are not empty, but no winning condition, its a draw
@@ -135,7 +104,7 @@ $('.playerx').on('click', function(){
     
     if (isGameActive === false){ 
         
-        playerX = true; // if clicked, player X has been selected
+        currentPlayer = 'X'; // if clicked, player X has been selected
         $('p').fadeOut( 1000 ); // fade out 'p' text
 
     };
@@ -146,7 +115,7 @@ $('.playero').on('click', function(){
 
     if (isGameActive === false){
        
-        playerX = false; // if clicked, player O has been selected
+        currentPlayer = 'O'; // if clicked, player O has been selected
         $('p').fadeOut( 1000 ); // fade out 'p' text
 
     };
