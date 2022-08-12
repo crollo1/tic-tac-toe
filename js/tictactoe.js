@@ -1,12 +1,4 @@
-// PSUEDOCODE
 
-// how do we get X and O to show on the board
-// $('cell').html('insert X or O here');
-
-// work out how to incorporate X and O for alternate clicks
-// use event listeners for click functions i.e. detecting click on each square. // each box will need an event listener.
-
-// debugger
 let currentPlayer = 'X'; 
 let isGameActive = false; // prevent switch token half way through game
 let moveCount = 0; // for move number 
