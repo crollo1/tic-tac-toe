@@ -18,10 +18,10 @@ const placeToken = function (){
     
     // check if clicked square is free with no existing HTML
     if ($(this).html() === '') {                            
-        // is square empty, if true run following
+        // is square empty, run following
         
         $(this).html( currentPlayer ); 
-        checkForWin(); // needs to run before token change
+        checkForWin(); // jumps down to check for win first
 
         // check is currentPlayer X
         if ( currentPlayer === 'X') {
@@ -35,11 +35,11 @@ const placeToken = function (){
     } // closes check for free square
 }; // closes placeToken
 
-$('.cell').on('click', placeToken); // click function for each box
+$('.cell').on('click', placeToken); // calls placeToken
 
 const winningMessage = function( position ){ 
 
-    isGameActive = false;
+    isGameActive = false; // player has one/ game over
     $('h2').html(`Congratulations, Player ${position} wins!`);
     $('.img1').show(500);
 
@@ -68,7 +68,7 @@ const checkForWin = function(){
      || pos0 === pos4 && pos0 === pos8 && pos0 !== '' 
      || pos2 === pos4 && pos2 === pos6 && pos2 !== '') { 
             
-        winningMessage( currentPlayer ); // last token placed = win
+        winningMessage( currentPlayer ); // calling winningMessage=, dropping in currentPlayer // last token placed = winner
        
     } else if (moveCount > 7){ 
         // if they are not empty, but no winning condition, its a draw
