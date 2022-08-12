@@ -12,11 +12,9 @@ let isGameActive = false; // prevent switch token half way through game
 let moveCount = 0; // for move number 
 
 // create function for event listeners
-
-
 const placeToken = function (){
 
-    isGameActive = true; // allows initial token selection
+    isGameActive = true; // allows initial token selection 
     
     // check if clicked square is free with no existing HTML
     if ($(this).html() === '') {                            
@@ -68,7 +66,7 @@ const checkForWin = function(){
      || pos1 === pos4 && pos1 === pos7 && pos1 !== '' 
      || pos2 === pos5 && pos2 === pos8 && pos2 !== '' 
      || pos0 === pos4 && pos0 === pos8 && pos0 !== '' 
-     || pos2 === pos4 && pos2 === pos6 && pos2 !== '') { // 1st row
+     || pos2 === pos4 && pos2 === pos6 && pos2 !== '') { 
             
         winningMessage( currentPlayer ); // last token placed = win
        
@@ -78,8 +76,9 @@ const checkForWin = function(){
         $('h2').html(`It's a draw! Click new game`);
     } // closes if-else
     
-    if (isGameActive === false) { // when game over, show winning message 
+    if (isGameActive === false) { 
         
+        // when game over, show winning message 
         $('h2').show();
         
     }; // closes if
