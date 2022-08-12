@@ -14,24 +14,25 @@ let moveCount = 0; // for move number
 // create function for event listeners
 
 
-const placeToken = function (  ){
+const placeToken = function (){
 
     isGameActive = true; // allows initial token selection
     
     // check if clicked square is free with no existing HTML
-    if ($(this).html() === '') { // if true, run following
+    if ($(this).html() === '') {                            
+        // is square empty, if true run following
         
         $(this).html( currentPlayer ); 
         checkForWin(); // needs to run before token change
 
         // check is currentPlayer X
         if ( currentPlayer === 'X') {
-
-             currentPlayer = 'O'; // if false, run else
+            // if not, current player is 'O', run else
+             currentPlayer = 'O'; 
         } else {
             currentPlayer = 'X' // change o back to x
         } // closes else
-        moveCount++; // total clicked square count
+        moveCount++; // increments total clicked square count
 
     } // closes check for free square
 }; // closes placeToken
@@ -99,11 +100,11 @@ $('.newgame').on('click', function(){
 
 $('.playerx').on('click', function(){
     
-    if (isGameActive === false){ 
+    if (isGameActive === false){ //checking if the game is active
         
         currentPlayer = 'X'; // if clicked, player X has been selected
         $('p').fadeOut( 800 ); // fade out 'p' text
-        $('.img2').hide();
+        $('.img2').hide(); // hide cookie 
 
     };
 
@@ -115,7 +116,7 @@ $('.playero').on('click', function(){
        
         currentPlayer = 'O'; // if clicked, player O has been selected
         $('p').fadeOut( 800 ); // fade out 'p' text
-        $('.img2').hide();
+        $('.img2').hide(); // hide cookie
 
     };
 

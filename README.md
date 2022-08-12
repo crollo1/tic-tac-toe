@@ -1,12 +1,12 @@
 # Tic-Tac-Toe
 
-Here, check out my game! This is my first project for GA, 2 weeks into the course. Enjoy!
+Click the link below to check out my game! This is my first project for GA, 2 weeks into the course. Enjoy!
 
 https://crollo1.github.io/tic-tac-toe/
 
 <em>Tic Tac Toe</em> - simple, fun and functional.
 
-Instructions
+## Instructions
 
 1. First, click <strong>'New Game'</strong>
 2. Select <em>Player X</em> or <em>Player O</em> and reveal the game board!
@@ -24,7 +24,16 @@ Instructions
 
 <br>
 
-• tech used (JS, HTML, CSS - included media queries, jQuery)????
+## Tech Used
+* JavaScript
+* jQuery
+* CSS
+* HTML
 
-Next steps would be to add an A.I. feature to play against the computer, a score keeper function and a mouse hover feature. Improving the media query would also be a goal. 
+## Next Steps
+* Add A.I feature 
+* Score keeper function
+* Mouse hover feature
+* Further improving media query functions
+
 
