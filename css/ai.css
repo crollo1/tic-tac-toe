@@ -113,6 +113,32 @@ button:hover {
     transform: scale(1.2);
 }
 
+.twoplayer {
+    position: absolute;
+    top: 400px;
+    left: 40px;
+    font-family: 'BhuTuka Expanded One', sans-serif;
+    font-size: 15px;
+    margin: 5px;
+    padding: 5px;
+    z-index: 10;
+}
+
+.ai {
+    position: absolute;
+    top: 400px;
+    left: 680px;
+    font-family: 'BhuTuka Expanded One', sans-serif;
+    font-size: 15px;
+    margin: 5px;
+    padding: 5px;
+    z-index: 10;
+}
+
+#switchgame {
+    display: inline-block;
+    top: 300px;
+}
 
 p {
     font-size: 35px;
@@ -202,5 +228,3 @@ p {
     }
 
 }
-
-
